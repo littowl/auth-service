@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  auth:
+    build: .
+    hostname: localhostauth
+    ports:
+      - 9000:9000
+      - 8580:8580
+    environment:
+      - POSTGRES_HOST=localhost
+      - POSTGRES_DB=auth_db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=6355
+      - HTTP_ADDR=127.0.0.1:8081
+      - GRPC_ADDR=127.0.0.1:3032
+
+
+  
